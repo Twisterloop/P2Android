@@ -11,5 +11,5 @@
         <item>¿Cuál es el único personaje al que se le ponen los ojos de otro color?;Wario;*Meta Knight;Ridley;Planta Piraña</item>
         <item>¿Qué franquicia tiene más referencia en Super Smash Bros Ultimate?;*Super Mario Bros;Pokemon;Fire Emblem;Donkey Kong</item>
     </array>
-
+    <string name="Comenzar_Button">Comenzar</string>
 </resources>
