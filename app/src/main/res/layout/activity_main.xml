@@ -19,7 +19,38 @@ tools:context=".MainActivity">
     android:textColor="#FFF"
     />
 
-<LinearLayout
+    <Chronometer
+        android:id="@+id/Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="18sp"/>
+
+
+    <TextView
+        android:id="@+id/Aciertos"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="A: 7 F:5"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Contador"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="1/5"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
     android:layout_gravity="center"
     android:layout_marginTop="50dp"
     android:background="@drawable/bgquestion"

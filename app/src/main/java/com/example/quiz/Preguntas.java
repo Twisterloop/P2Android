@@ -10,6 +10,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Chronometer;
 
 import java.util.Arrays;
 
@@ -18,6 +19,10 @@ public class Preguntas extends AppCompatActivity {
     private int resIds[] = {
             R.id.res1, R.id.res2, R.id.res3, R.id.res4
     };
+    private String Contador = "%s/%s";
+    private String AciertosYFallos = "A: %s F: %s";
+    TextView AciertosView;
+    TextView ContadorView;
     private int correcta;
     private int actual;
     private String[] preguntas;
@@ -25,6 +30,12 @@ public class Preguntas extends AppCompatActivity {
     private TextView img;
     private int[] respuestas;
     private boolean[] acierto;
+    int aciertos = 0;
+    int fallos = 0;
+    int contador = 1;
+    int tiempo;
+    int numpreguntas = 25;
+    Chronometer TimeView;
     private RadioGroup group;
     private Button inicio;
     private int score;
@@ -35,6 +46,19 @@ public class Preguntas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TimeView = findViewById(R.id.Timer);
+        TimeView.setFormat("Tiempo: %s");
+        TimeView.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
+            @Override
+            public void onChronometerTick(Chronometer chronometer) {
+                tiempo++;
+            }
+        });
+        AciertosView = findViewById(R.id.Aciertos);
+        ContadorView = findViewById(R.id.Contador);
+        AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
+        ContadorView.setText(String.format(Contador,1,numpreguntas));
+        TimeView.start();
 
 
         group = (RadioGroup) findViewById(R.id.grupoRes);
@@ -86,6 +110,8 @@ public class Preguntas extends AppCompatActivity {
             }
         }
         if (ans == correcta) {
+            aciertos++;
+            AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
             score = score + 3;
             Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show();
             if (actual < preguntas.length - 1) {
@@ -96,6 +122,8 @@ public class Preguntas extends AppCompatActivity {
             }
         }
         else {
+            fallos++;
+            AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
             score = score - 2;
             Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
         }
@@ -103,7 +131,8 @@ public class Preguntas extends AppCompatActivity {
     private void mostrarPregunta() {
         String k = preguntas[actual];
         String[] parts = k.split(";");
-
+        contador++;
+        ContadorView.setText(String.format(Contador,contador,numpreguntas));
         group.clearCheck();
 
         preguntaQuiz.setText(parts[0]);
