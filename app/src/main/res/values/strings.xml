@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Quiz</string>
+    <string name="finish">Finish</string>
+    <string name="results">Results</string>
+    <string name="start_over">Start Over</string>
+
+    <array name="preguntas">
+        <item>¿De que juego es esta skin de Link?;The legend of Zelda;*TLOZ: Majoras Mask;TLOZ: Ocarina of Time;TLOZ: Breath of the Wild</item>
+        <item>¿Qué personaje no pertenece a una compañía japonesa?;*Banjo;Samus Oscura;King K.Rool;Waluigi</item>
+        <item>¿De qué color se vuelven los ojos de los personajes al hacer un "parry"?;Azul;Rojo;Verde;*Amarillo</item>
+        <item>¿Cuál es el único personaje al que se le ponen los ojos de otro color?;Wario;*Meta Knight;Ridley;Planta Piraña</item>
+        <item>¿Qué franquicia tiene más referencia en Super Smash Bros Ultimate?;*Super Mario Bros;Pokemon;Fire Emblem;Donkey Kong</item>
+    </array>
+
+</resources>
