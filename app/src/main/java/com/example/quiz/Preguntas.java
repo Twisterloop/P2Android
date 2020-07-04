@@ -123,9 +123,11 @@ public class Preguntas extends AppCompatActivity {
         }
         else {
             fallos++;
+            actual++;
             AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
             score = score - 2;
             Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+            mostrarPregunta();
         }
     }
     private void mostrarPregunta() {
