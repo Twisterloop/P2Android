@@ -9,7 +9,27 @@
         <item>¿Qué personaje no pertenece a una compañía japonesa?;*Banjo;Samus Oscura;King K.Rool;Waluigi</item>
         <item>¿De qué color se vuelven los ojos de los personajes al hacer un "parry"?;Azul;Rojo;Verde;*Amarillo</item>
         <item>¿Cuál es el único personaje al que se le ponen los ojos de otro color?;Wario;*Meta Knight;Ridley;Planta Piraña</item>
-        <item>¿Qué franquicia tiene más referencia en Super Smash Bros Ultimate?;*Super Mario Bros;Pokemon;Fire Emblem;Donkey Kong</item>
+        <item>¿A qué versión de Smash pertenece este vídeo?(FoxFinalSmash);Brawl;*SSBU;3Ds/WiiU;64</item>
+        <item>¿Cuál de estos personajes NO puede recibir este ataque sin bloquear?(Ganon);*Yoshi;Kirby;Pikachu;Luigi</item>
+        <item>¿Qué dice Lucario cuando hace el Smash Final en la versión española?(Lucario);Pika pika;Lucario;Es mi momento;*Esto no ha acabado</item>
+        <item>¿Qué personaje ayuda a Robin?(RobinFsmash);*Chrom;Math;Ike;Mario</item>
+        <item>¿Qué ocurre con Samus después del vídeo?(SamusFSmash);Nada;Muere;*Pierde la armadura;Se duerme</item>
+        <item>¿A qué saga pertenece esta canción?(KK);*Animal Crossing;Assassins Creed;Banjo;Yoshis Island</item>
+        <item>¿A qué ayudante pertenece la música?;Waluigi;Papyrus;Groudon;*Shovel Knight</item>
+        <item>¿En cuál de los siguientes mapas NO puedes poner megalovania?;PictoChat2;*Great Cave Offensive;Hanenbow;StreetPass Quest</item>
+        <item>¿A qué ayudante pertenece?;Wario;Mario;Bowser;*Waluigi</item>
+        <item>¿Qué cambia en el juego original?;Nada;*Sangre;Armas;Personajes</item>
+        <item>¿Escenario base de Mario?;*Peach Castle;Saffron City;Planet Zebes;Pirate Ship</item>
+        <item>¿Cuántos personajes jugables hay?;69;59;*76;75</item>
+        <item>¿Qué pasa al disparar un banana gun?;*Se vuelve una cáscara;Ganas;Te caes;Aumenta tu potasio</item>
+        <item>¿Qué tipo de animal es Bowser?;Tortuga;Caracol;*Koopa;*Fontanero</item>
+        <item>¿Cuál es el único Neutral B que SIEMPRE hace KO al 0%?;*Roy;Ganondorf;Byleth;Robin</item>
+        <item>¿Qué pasa si se le rompe el escudo a Jigglypuff?;Se aturde;Nada;*Muere;No puede usar el escudo</item>
+        <item>¿Quíen anda más rápido?;*Marth;Sonic;Cpt Falcon;Little Mac</item>
+        <item>¿Por qué no estaban los Ice Climbers en la 3ds?;Estaban OP;Se olvidó Sakurai;No querían;*El motor no lo permitía</item>
+        <item>¿Quíen es el más rápido en el aire?;Wario;Jigglypuff;*Yoshi;Kirby</item>
+        <item>¿Quién de estos recibe daño con su Counter?;*Incineroar;Marth;K K Rool; Ike</item>
+
     </array>
     <string name="Comenzar_Button">Comenzar</string>
 </resources>
