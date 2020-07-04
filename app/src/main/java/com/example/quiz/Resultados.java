@@ -17,6 +17,7 @@ public class Resultados extends AppCompatActivity {
         Intent intent = getIntent();
         int number = intent.getIntExtra(Preguntas.EXTRA_NUMBER, 0);
 
+
         TextView results = (TextView) findViewById(R.id.results);
 
         results.setText("Tu puntuación es:" + number);

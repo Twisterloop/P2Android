@@ -84,6 +84,7 @@ public class Preguntas extends AppCompatActivity {
         Intent intent = new Intent(this, Resultados.class);
         intent.putExtra(EXTRA_NUMBER, score);
 
+
         startActivity(intent);
         empiezaNuevo();
 
@@ -118,7 +119,10 @@ public class Preguntas extends AppCompatActivity {
                 actual++;
                 mostrarPregunta();
             } else {
+                TimeView.stop();
+//                si queremos hacer algo con el tiempo aquí es donde hay que guardarlo o pasarlo
                 resultados();
+
             }
         }
         else {
