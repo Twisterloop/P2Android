@@ -16,11 +16,12 @@ public class Resultados extends AppCompatActivity {
 
         Intent intent = getIntent();
         int number = intent.getIntExtra(Preguntas.EXTRA_NUMBER, 0);
+        int tiempo = intent.getIntExtra("valor", 0);
 
 
         TextView results = (TextView) findViewById(R.id.results);
 
-        results.setText("Tu puntuación es:" + number);
+        results.setText("Tu puntuación es:" + number + " y " +tiempo+ " segundos");
 
         Button inicio = (Button) findViewById(R.id.back);
 

@@ -83,6 +83,7 @@ public class Preguntas extends AppCompatActivity {
     public void resultados() {
         Intent intent = new Intent(this, Resultados.class);
         intent.putExtra(EXTRA_NUMBER, score);
+        intent.putExtra("valor",tiempo);
 
 
         startActivity(intent);
