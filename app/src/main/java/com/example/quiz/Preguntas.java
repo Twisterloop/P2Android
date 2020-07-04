@@ -34,7 +34,7 @@ public class Preguntas extends AppCompatActivity {
     int fallos = 0;
     int contador = 1;
     int tiempo;
-    int numpreguntas = 25;
+    int numpreguntas = Configuracion.NPreg;
     Chronometer TimeView;
     private RadioGroup group;
     private Button inicio;

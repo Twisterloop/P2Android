@@ -32,6 +32,9 @@
             android:name=".Preguntas"
             android:noHistory="true"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".Configuracion"
+            android:screenOrientation="portrait" />
         <!--<activity
             android:name=".Puntuaciones"
             />
@@ -39,9 +42,7 @@
             android:name=".SavePuntuation"
             android:noHistory="true"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".Opcions"
-            android:screenOrientation="portrait" />
+
         <activity
             android:name=".ProfileChooser"
             android:label="@string/title_activity_profile_chooser"

@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Preguntas.class);
         startActivity(intent);
     }
-
+    public void Configuracion(View view){
+        Intent intent = new Intent(this, Configuracion.class);
+        startActivity(intent);
+    }
     
 
 
