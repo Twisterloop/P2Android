@@ -12,13 +12,35 @@
         android:id="@+id/radioPreguntas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="60dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="113dp"
-        android:layout_marginEnd="280dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="112dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <RadioButton
+            android:id="@+id/preg5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgpurple"
+            android:checked="true"
+            android:onClick="onRadioButtonClicked"
+            android:text="5 Preguntas" />
+
+        <RadioButton
+            android:id="@+id/preg10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgpurple"
+            android:onClick="onRadioButtonClicked"
+            android:text="10 Preguntas" />
+
+        <RadioButton
+            android:id="@+id/preg15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bgpurple"
+            android:onClick="onRadioButtonClicked"
+            android:text="15 Preguntas" />
 
     </RadioGroup>
 
@@ -27,24 +49,22 @@
         android:layout_width="203dp"
         android:layout_height="96dp"
         android:layout_marginStart="104dp"
-        android:layout_marginTop="116dp"
-        android:layout_marginBottom="77dp"
         android:background="@drawable/bgpurple"
+        android:onClick="onConfirm"
         android:text="Confirmar Cambios"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
-        android:layout_width="409dp"
-        android:layout_height="wrap_content"
+        android:layout_width="273dp"
+        android:layout_height="52dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="93dp"
-        android:layout_marginEnd="1dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/expert">
+        android:layout_marginBottom="37dp"
+        app:boxBackgroundColor="@color/colorAccent"
+        app:boxBackgroundMode="filled"
+        app:layout_constraintBottom_toTopOf="@+id/confirmButton"
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nombre"
@@ -59,41 +79,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="63dp"
-        android:layout_marginBottom="93dp"
         android:background="@drawable/bgpurple"
+        android:onClick="onExperto"
         android:text="Modo Experto"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioPreguntas" />
 
-    <RadioButton
-        android:id="@+id/preg5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgpurple"
-        android:onClick="onRadioButtonClicked"
-        android:text="5 Preguntas"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="114dp" />
+    <TextView
+        android:id="@+id/prueba"
+        android:layout_width="166dp"
+        android:layout_height="199dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="112dp"
+        android:background="@drawable/bgapp"
+        android:text="TextView"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/radioPreguntas"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <RadioButton
-        android:id="@+id/preg10"
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/aceptar"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bgpurple"
-        android:onClick="onRadioButtonClicked"
-        android:text="10 Preguntas"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="183dp" />
-
-    <RadioButton
-        android:id="@+id/preg15"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bgpurple"
-        android:onClick="onRadioButtonClicked"
-        android:text="15 Preguntas"
-        tools:layout_editor_absoluteX="110dp"
-        tools:layout_editor_absoluteY="252dp" />
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="40dp"
+        android:onClick="onAceptar"
+        android:text="Aceptar"
+        app:layout_constraintBottom_toTopOf="@+id/confirmButton"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -48,7 +48,7 @@ public class Preguntas extends AppCompatActivity {
     private boolean[] acierto;
     int aciertos = 0;
     int fallos = 0;
-    int tiempo;
+    public static int tiempo;
     Chronometer TimeView;
     int contador = 0;
     int numpreguntas = Configuracion.NPreg;
@@ -59,7 +59,7 @@ public class Preguntas extends AppCompatActivity {
     private RadioButton rb3;
     private RadioButton rb4;
     private Button inicio;
-    private int score;
+    public static int score = 0;
 
     MediaPlayer player;
 
@@ -112,8 +112,6 @@ public class Preguntas extends AppCompatActivity {
     }
     public void resultados() {
         Intent intent = new Intent(this, Resultados.class);
-        intent.putExtra("score",score);
-        intent.putExtra("tiempo",tiempo);
         startActivity(intent);
         empiezaNuevo();
 
@@ -130,7 +128,7 @@ public class Preguntas extends AppCompatActivity {
         //acierto= new boolean[preguntas.length];
         contador = 0;
         Collections.shuffle(listaPreguntas);
-        score = 0;
+        //score = 0;
         mostrarPregunta();
     }
 
@@ -147,8 +145,8 @@ public class Preguntas extends AppCompatActivity {
             aciertos++;
             AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
             score = score + 3;
-            //Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show();
-            if (contador < numpreguntas) {
+            Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show();
+            if (contador+1 < numpreguntas) {
                 mostrarPregunta();
             } else {
                 resultados();
@@ -157,16 +155,20 @@ public class Preguntas extends AppCompatActivity {
         else {
             fallos++;
             AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
-            score = score - 2;
-            //Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+            //score = score - 2;
+            Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
             mostrarPregunta();
         }
     }
     private void mostrarPregunta() {
 
+
         actual = listaPreguntas.get(contador);
 
         group.clearCheck();
+
+        if(contador > numpreguntas)
+            return;
 
         preguntaQuiz.setText(actual.getPregunta());
 

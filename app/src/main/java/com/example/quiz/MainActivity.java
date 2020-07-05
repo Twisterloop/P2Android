@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static boolean desdeMenu = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void Ranking(View view){
+        desdeMenu = true;
         Intent intent = new Intent(this, Ranking.class);
         startActivity(intent);
     }
