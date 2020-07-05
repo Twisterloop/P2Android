@@ -3,15 +3,116 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/fondorank"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/ranking"
+        android:layout_width="168dp"
+        android:layout_height="62dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="380dp"
+        android:background="@drawable/bgpurple"
+        android:text="Ranking"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/rank1"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="92dp"
+        android:text="1º Puesto"
+        android:background="@drawable/bgpurple"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ranking" />
+
+    <TextView
+        android:id="@+id/rank2"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:text="2º Puesto"
+        android:background="@drawable/bgpurple"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/rank1"
+        app:layout_constraintTop_toBottomOf="@+id/rank1" />
+
+    <TextView
+        android:id="@+id/rank3"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:text="3º Puesto"
+        android:background="@drawable/bgpurple"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/rank2"
+        app:layout_constraintTop_toBottomOf="@+id/rank2" />
+
+
+
+    <TextView
+        android:id="@+id/rank4"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:text="4º Puesto"
+        android:background="@drawable/bgpurple"
+        android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/rank3"
+        app:layout_constraintTop_toBottomOf="@+id/rank3" />
+
+    <TextView
+        android:id="@+id/rank5"
+        android:layout_width="180dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="8dp"
+        android:text="5º Puesto"
+        android:background="@drawable/bgpurple"
+        android:textAlignment="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rank4"
+        app:layout_constraintTop_toBottomOf="@+id/rank4"
+        app:layout_constraintVertical_bias="0.0"
+        android:textColor="@android:color/black" />
+
     <Button
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_width="93dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/bgpurple"
         android:onClick="play"
-        tools:layout_editor_absoluteX="183dp"
-        tools:layout_editor_absoluteY="243dp" />
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="@+id/rank5"
+        app:layout_constraintTop_toBottomOf="@+id/rank5" />
 </androidx.constraintlayout.widget.ConstraintLayout>

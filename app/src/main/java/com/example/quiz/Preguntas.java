@@ -31,12 +31,12 @@ public class Preguntas extends AppCompatActivity {
     private int[] resIds = {
             R.id.res1, R.id.res2, R.id.res3, R.id.res4
     };
-    /*private String Contador = "%s/%s";
+    private String Contador = "%s/%s";
     private String AciertosYFallos = "A: %s F: %s";
     TextView AciertosView;
     TextView ContadorView;
 
-     */
+
 
     private Pregunta actual;
     private TextView preguntaQuiz;
@@ -45,12 +45,11 @@ public class Preguntas extends AppCompatActivity {
     private ImageView img;
     private Button play;
 
-    /*private boolean[] acierto;
+    private boolean[] acierto;
     int aciertos = 0;
     int fallos = 0;
-    int contador = 1;
-    int tiempo;*/
-    //Chronometer TimeView;
+    int tiempo;
+    Chronometer TimeView;
     int contador = 0;
     int numpreguntas = Configuracion.NPreg;
 
@@ -70,7 +69,7 @@ public class Preguntas extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /* TimeView = findViewById(R.id.Timer);
+         TimeView = findViewById(R.id.Timer);
         TimeView.setFormat("Tiempo: %s");
         TimeView.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
@@ -82,7 +81,7 @@ public class Preguntas extends AppCompatActivity {
         ContadorView = findViewById(R.id.Contador);
         AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
         ContadorView.setText(String.format(Contador,1,numpreguntas));
-        TimeView.start(); */
+        TimeView.start();
 
 
         group =  findViewById(R.id.radioGroup);
@@ -113,7 +112,8 @@ public class Preguntas extends AppCompatActivity {
     }
     public void resultados() {
         Intent intent = new Intent(this, Resultados.class);
-
+        intent.putExtra("score",score);
+        intent.putExtra("tiempo",tiempo);
         startActivity(intent);
         empiezaNuevo();
 
@@ -144,8 +144,8 @@ public class Preguntas extends AppCompatActivity {
             }
         }
         if (ans == actual.getRes_correcta()) {
-            //aciertos++;
-            //AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
+            aciertos++;
+            AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
             score = score + 3;
             //Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show();
             if (contador < numpreguntas) {
@@ -155,8 +155,8 @@ public class Preguntas extends AppCompatActivity {
             }
         }
         else {
-            //fallos++
-            //AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
+            fallos++;
+            AciertosView.setText(String.format(AciertosYFallos,aciertos, fallos));
             score = score - 2;
             //Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
             mostrarPregunta();
@@ -170,7 +170,7 @@ public class Preguntas extends AppCompatActivity {
 
         preguntaQuiz.setText(actual.getPregunta());
 
-        //ContadorView.setText(String.format(Contador, contador, numpreguntas));
+        ContadorView.setText(String.format(Contador, contador, numpreguntas));
 
         rb1.setText(actual.getRes1());
         rb2.setText(actual.getRes2());

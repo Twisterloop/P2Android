@@ -21,16 +21,49 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <Chronometer
+        android:id="@+id/Timer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="256dp"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textScreen2"
+        app:layout_constraintTop_toTopOf="@+id/textScreen2" />
+
+    <TextView
+        android:id="@+id/Aciertos"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="164dp"
+        android:text="A: 7 F:5"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Timer" />
+
+    <TextView
+        android:id="@+id/Contador"
+        android:layout_width="38dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="60dp"
+        android:text="1/5"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/Aciertos" />
+
     <VideoView
         android:id="@+id/videoPregunta"
-        android:layout_width="379dp"
-        android:layout_height="272dp"
+        android:layout_width="320dp"
+        android:layout_height="254dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="16dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textScreen2" />
 
@@ -114,9 +147,10 @@
 
     <ImageView
         android:id="@+id/imagen"
-        android:layout_width="0dp"
-        android:layout_height="269dp"
-        android:layout_marginTop="26dp"
+        android:layout_width="343dp"
+        android:layout_height="243dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textScreen2"
         app:srcCompat="@drawable/waluonicle" />
