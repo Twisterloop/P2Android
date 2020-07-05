@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/fondomenu">
 
 
     <Button
@@ -16,6 +17,7 @@
         android:layout_marginBottom="368dp"
         android:onClick="Comenzar"
         android:text="@string/Comenzar_Button"
+        android:background="@drawable/bgquestion"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,6 +32,7 @@
         android:layout_marginEnd="134dp"
         android:onClick="Configuracion"
         android:text="Configuración"
+        android:background="@drawable/bgquestion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Comenzar" />
