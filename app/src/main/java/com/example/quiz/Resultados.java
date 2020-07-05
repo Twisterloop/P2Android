@@ -23,11 +23,18 @@ public class Resultados extends AppCompatActivity {
 
         Button inicio = (Button) findViewById(R.id.back);
 
+
+
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
+    }
+
+    public void Ranking(View view){
+        Intent intent = new Intent(this, Ranking.class);
+        startActivity(intent);
     }
 }

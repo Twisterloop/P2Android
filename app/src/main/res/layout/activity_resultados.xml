@@ -32,5 +32,19 @@
         android:text="de nuevo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RankingButton" />
+
+    <Button
+        android:id="@+id/RankingButton"
+        android:layout_width="144dp"
+        android:layout_height="74dp"
+        android:layout_marginStart="133dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="134dp"
+        android:background="@drawable/bgpurple"
+        android:onClick="Ranking"
+        android:text="Ranking"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/results" />
 </androidx.constraintlayout.widget.ConstraintLayout>
