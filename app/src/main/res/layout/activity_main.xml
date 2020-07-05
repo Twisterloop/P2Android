@@ -1,109 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:orientation="vertical"
-android:background="@drawable/bgapp"
-tools:context=".MainActivity">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgapp">
 
-<TextView
-    android:id="@+id/textScreen"
-    android:textSize="24sp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Quiz Super Smash Bros Ultimate"
-    android:layout_gravity="center"
-    android:textColor="#FFF"
-    />
-
-    <Chronometer
-        android:id="@+id/Timer"
+    <TextView
+        android:id="@+id/textScreen2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:textSize="18sp"/>
+        android:layout_gravity="center"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="33dp"
+        android:text="Quiz Super Smash Bros Ultimate"
+        android:textColor="#FFF"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <VideoView
+        android:id="@+id/videoPregunta"
+        android:layout_width="379dp"
+        android:layout_height="272dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textScreen2" />
 
-    <TextView
-        android:id="@+id/Aciertos"
-        android:layout_width="82dp"
+    <Button
+        android:id="@+id/nuevo"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="A: 7 F:5"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/Contador"
-        android:layout_width="38dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="1/5"
-        android:textSize="18sp"
-        android:textStyle="bold" />
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="6dp"
+        android:text="Empezar de nuevo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
     <LinearLayout
-    android:layout_gravity="center"
-    android:layout_marginTop="50dp"
-    android:background="@drawable/bgquestion"
-    android:orientation="vertical"
-    android:layout_width="290dp"
-    android:layout_height="150dp">
-
-    <TextView
-        android:textAlignment="center"
-        android:id="@+id/preguntaQuiz"
-        android:layout_marginTop="40dp"
+        android:id="@+id/linearLayout"
+        android:layout_width="290dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        android:textColor="#332FA2"
-        android:textSize="22sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cuantas consolas tiene nintendo"/>
-</LinearLayout><![CDATA[
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="61dp"
+        android:background="@drawable/bgquestion"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/videoPregunta">
 
-
-    />
-
-
-
-    />
-
-
-
-    />
-
-
-
-    ]]>
-
-    <TextView
-        android:id="@+id/lonk"
-        android:layout_width="237dp"
-        android:layout_height="218dp"
-        android:layout_gravity="center"
-        android:background="@drawable/lonk" />
+        <TextView
+            android:id="@+id/preguntaQuiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:text="Cuantas consolas tiene nintendo"
+            android:textAlignment="center"
+            android:textColor="#332FA2"
+            android:textSize="22sp" />
+    </LinearLayout>
 
     <RadioGroup
-        android:id="@+id/grupoRes"
-        android:layout_width="match_parent"
-        android:layout_marginTop="10dp"
-        android:layout_height="match_parent">
-
-        <RadioButton
-            android:id="@+id/res1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioButtonClicked"
-            android:text="RadioButton" />
+        android:id="@+id/radioGroup"
+        android:layout_width="171dp"
+        android:layout_height="126dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/nuevo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <RadioButton
             android:id="@+id/res2"
@@ -126,13 +104,30 @@ tools:context=".MainActivity">
             android:onClick="onRadioButtonClicked"
             android:text="RadioButton" />
 
-        <Button
-            android:id="@+id/nuevo"
+        <RadioButton
+            android:id="@+id/res1"
             android:layout_width="match_parent"
-            android:layout_marginTop="40dp"
             android:layout_height="wrap_content"
-            android:text="Empezar de nuevo" />
+            android:onClick="onRadioButtonClicked"
+            android:text="RadioButton" />
     </RadioGroup>
 
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="0dp"
+        android:layout_height="269dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textScreen2"
+        app:srcCompat="@drawable/waluonicle" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/audio"
+        android:layout_width="192dp"
+        android:layout_height="115dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="104dp"
+        android:text="PLAY"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

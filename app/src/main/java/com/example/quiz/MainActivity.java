@@ -28,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Configuracion.class);
         startActivity(intent);
     }
-    
+    public void Ranking(View view){
+        Intent intent = new Intent(this, Ranking.class);
+        startActivity(intent);
+    }
 
 
 }

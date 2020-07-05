@@ -15,11 +15,9 @@ public class Resultados extends AppCompatActivity {
         setContentView(R.layout.activity_resultados);
 
         Intent intent = getIntent();
-        int number = intent.getIntExtra(Preguntas.EXTRA_NUMBER, 0);
-
         TextView results = (TextView) findViewById(R.id.results);
 
-        results.setText("Tu puntuación es:" + number);
+//        results.setText("Tu puntuación es:" + Preguntas.score);
 
         Button inicio = (Button) findViewById(R.id.back);
 
