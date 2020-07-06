@@ -13,7 +13,7 @@ import java.util.List;
 
 public class PreguntaDbHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "PreguntasDb.db";
-    private static final int DATABASE_VERSION =3;
+    private static final int DATABASE_VERSION = 3;
 
     private SQLiteDatabase db;
 
@@ -53,53 +53,53 @@ public class PreguntaDbHelper extends SQLiteOpenHelper {
     }
 
     private void CrearPreguntas() {
-        Pregunta p1 = new Pregunta("¿De que juego es esta skin de Link?","Imagen","Normal","lonk","No","No","The legend of Zelda","TLOZ: Majoras Mask","TLOZ: Ocarina of Time","TLOZ: Breath of the Wild",2);
+        Pregunta p1 = new Pregunta("¿De que juego es esta skin de Link?", "Imagen", "Normal", "lonk", "No", "No", "The legend of Zelda", "TLOZ: Majoras Mask", "TLOZ: Ocarina of Time", "TLOZ: Breath of the Wild", 2);
         nuevaPregunta(p1);
-        Pregunta p2 = new Pregunta("¿Qué personaje no pertenece a una compañía japonesa?","Imagen","Normal","waluonicle","No","No","Banjo","Samus Oscura","King K.Rool","Waluigi",1);
+        Pregunta p2 = new Pregunta("¿Qué personaje no pertenece a una compañía japonesa?", "Imagen", "Normal", "waluonicle", "No", "No", "Banjo", "Samus Oscura", "King K.Rool", "Waluigi", 1);
         nuevaPregunta(p2);
-        Pregunta p3 = new Pregunta("¿De qué color se vuelven los ojos de los personajes al hacer un 'parry'?","Texto","Normal","No","No","No","Azul","Rojo","Verde","Amarillo",4);
+        Pregunta p3 = new Pregunta("¿De qué color se vuelven los ojos de los personajes al hacer un 'parry'?", "Texto", "Normal", "No", "No", "No", "Azul", "Rojo", "Verde", "Amarillo", 4);
         nuevaPregunta(p3);
-        Pregunta p4 = new Pregunta("¿Cuál es el único personaje al que se le ponen los ojos de otro color?","Texto","Normal","No","No","No","Wario","Meta Knight","Ridley","Planta Piraña",2);
+        Pregunta p4 = new Pregunta("¿Cuál es el único personaje al que se le ponen los ojos de otro color?", "Texto", "Normal", "No", "No", "No", "Wario", "Meta Knight", "Ridley", "Planta Piraña", 2);
         nuevaPregunta(p4);
-        Pregunta p5 = new Pregunta("¿A qué versión de Smash pertenece este vídeo?","Video","Normal","No","foxfinalsmash","No","Brawl","SSBU","3Ds/WiiU","64",2);
+        Pregunta p5 = new Pregunta("¿A qué versión de Smash pertenece este vídeo?", "Video", "Normal", "No", "foxfinalsmash", "No", "Brawl", "SSBU", "3Ds/WiiU", "64", 2);
         nuevaPregunta(p5);
-        Pregunta p6 = new Pregunta("¿Cuál de estos personajes NO puede recibir este ataque sin bloquear?","Video","Normal","No","ganonsmash","No","Yoshi","Kirby","Pikachu","Luigi",1);
+        Pregunta p6 = new Pregunta("¿Cuál de estos personajes NO puede recibir este ataque sin bloquear?", "Video", "Normal", "No", "ganonsmash", "No", "Yoshi", "Kirby", "Pikachu", "Luigi", 1);
         nuevaPregunta(p6);
-        Pregunta p7 = new Pregunta("¿Qué dice Lucario cuando hace el Smash Final en la versión española?","Video","Normal","No","lucariofinalsmash","No","Pika pika","Lucario","Es mi momento","Esto no ha acabado",4);
+        Pregunta p7 = new Pregunta("¿Qué dice Lucario cuando hace el Smash Final en la versión española?", "Video", "Normal", "No", "lucariofinalsmash", "No", "Pika pika", "Lucario", "Es mi momento", "Esto no ha acabado", 4);
         nuevaPregunta(p7);
-        Pregunta p8 = new Pregunta("¿Qué personaje ayuda a Robin?","Video","Normal","No","robinfinalsmash","No","Chrom","Math","Ike","Mario",1);
+        Pregunta p8 = new Pregunta("¿Qué personaje ayuda a Robin?", "Video", "Normal", "No", "robinfinalsmash", "No", "Chrom", "Math", "Ike", "Mario", 1);
         nuevaPregunta(p8);
-        Pregunta p9 = new Pregunta("¿Qué ocurre con Samus después del vídeo?","Video","Normal","No","samussmashbrawl","No","Nada","Muere","Pierde la armadura","Se duerme",3);
+        Pregunta p9 = new Pregunta("¿Qué ocurre con Samus después del vídeo?", "Video", "Normal", "No", "samussmashbrawl", "No", "Nada", "Muere", "Pierde la armadura", "Se duerme", 3);
         nuevaPregunta(p9);
-        Pregunta p10 = new Pregunta("¿A qué saga pertenece esta canción?","Audio","Normal","No","No","kkcruisin","Animal Crossing","Assassins Creed","Banjo","Yoshis Island",1);
+        Pregunta p10 = new Pregunta("¿A qué saga pertenece esta canción?", "Audio", "Normal", "No", "No", "kkcruisin", "Animal Crossing", "Assassins Creed", "Banjo", "Yoshis Island", 1);
         nuevaPregunta(p10);
-        Pregunta p11 = new Pregunta("¿A qué ayudante pertenece la música?","Audio","Normal","No","No","shovelk","Waluigi","Papyrus","Groudon","Shovel Knight",4);
+        Pregunta p11 = new Pregunta("¿A qué ayudante pertenece la música?", "Audio", "Normal", "No", "No", "shovelk", "Waluigi", "Papyrus", "Groudon", "Shovel Knight", 4);
         nuevaPregunta(p11);
-        Pregunta p12 = new Pregunta("¿En cuál de los siguientes mapas NO puedes poner megalovania?","Audio","Normal","No","No","megalovania","PictoChat2","Great Cave Offensive","Hanenbow","StreetPass Quest",2);
+        Pregunta p12 = new Pregunta("¿En cuál de los siguientes mapas NO puedes poner megalovania?", "Audio", "Normal", "No", "No", "megalovania", "PictoChat2", "Great Cave Offensive", "Hanenbow", "StreetPass Quest", 2);
         nuevaPregunta(p12);
-        Pregunta p13 = new Pregunta("¿A qué ayudante pertenece?","Audio","Normal","No","No","wah","Wario","Mario","Bowser","Waluigi",4);
+        Pregunta p13 = new Pregunta("¿A qué ayudante pertenece?", "Audio", "Normal", "No", "No", "wah", "Wario", "Mario", "Bowser", "Waluigi", 4);
         nuevaPregunta(p13);
-        Pregunta p14 = new Pregunta("¿Qué cambia en el juego original?","Video","Normal","No","jokerfsmash","No","Nada","Sangre","Armas","Personajes",2);
+        Pregunta p14 = new Pregunta("¿Qué cambia en el juego original?", "Video", "Normal", "No", "jokerfsmash", "No", "Nada", "Sangre", "Armas", "Personajes", 2);
         nuevaPregunta(p14);
-        Pregunta p15 = new Pregunta("¿Escenario base de Mario?","Texto","Normal","No","No","No","Peach Castle","Saffron City","Planet Zebes","Pirate Ship",1);
+        Pregunta p15 = new Pregunta("¿Escenario base de Mario?", "Texto", "Normal", "No", "No", "No", "Peach Castle", "Saffron City", "Planet Zebes", "Pirate Ship", 1);
         nuevaPregunta(p15);
-        Pregunta p16 = new Pregunta("¿Cuántos personajes jugables hay?","Texto","Normal","No","No","No","69","59","76","75",3);
+        Pregunta p16 = new Pregunta("¿Cuántos personajes jugables hay?", "Texto", "Normal", "No", "No", "No", "69", "59", "76", "75", 3);
         nuevaPregunta(p16);
-        Pregunta p17 = new Pregunta("¿Qué pasa al disparar un banana gun?","Texto","Normal","No","No","No","Se vuelve una cáscara","Ganas","Te caes","Aumenta tu potasio",1);
+        Pregunta p17 = new Pregunta("¿Qué pasa al disparar un banana gun?", "Texto", "Normal", "No", "No", "No", "Se vuelve una cáscara", "Ganas", "Te caes", "Aumenta tu potasio", 1);
         nuevaPregunta(p17);
-        Pregunta p18 = new Pregunta("¿Qué tipo de animal es Bowser?","Texto","Normal","No","No","No","Tortuga","Caracol","Koopa","Fontanero",3);
+        Pregunta p18 = new Pregunta("¿Qué tipo de animal es Bowser?", "Texto", "Normal", "No", "No", "No", "Tortuga", "Caracol", "Koopa", "Fontanero", 3);
         nuevaPregunta(p18);
-        Pregunta p19 = new Pregunta("¿Cuál es el único Neutral B que SIEMPRE hace KO al 0%?","Texto","Normal","No","No","No","Roy","Ganondorf","Byleth","Robin",1);
+        Pregunta p19 = new Pregunta("¿Cuál es el único Neutral B que SIEMPRE hace KO al 0%?", "Texto", "Normal", "No", "No", "No", "Roy", "Ganondorf", "Byleth", "Robin", 1);
         nuevaPregunta(p19);
-        Pregunta p20 = new Pregunta("¿Qué pasa si se le rompe el escudo a Jigglypuff?","Texto","Experto","No","No","No","Se aturde","Nada","Muere","No puede usar el escudo",3);
+        Pregunta p20 = new Pregunta("¿Qué pasa si se le rompe el escudo a Jigglypuff?", "Texto", "Experto", "No", "No", "No", "Se aturde", "Nada", "Muere", "No puede usar el escudo", 3);
         nuevaPregunta(p20);
-        Pregunta p21 = new Pregunta("¿Quíen anda más rápido?","Texto","Experto","No","No","No","Marth","Sonic","Cpt Falcon","Little Mac",1);
+        Pregunta p21 = new Pregunta("¿Quíen anda más rápido?", "Texto", "Experto", "No", "No", "No", "Marth", "Sonic", "Cpt Falcon", "Little Mac", 1);
         nuevaPregunta(p21);
-        Pregunta p22 = new Pregunta("¿Por qué no estaban los Ice Climbers en la 3ds?","Texto","Experto","No","No","No","Estaban OP","Se olvidó Sakurai","No querían","El motor no lo permitía",4);
+        Pregunta p22 = new Pregunta("¿Por qué no estaban los Ice Climbers en la 3ds?", "Texto", "Experto", "No", "No", "No", "Estaban OP", "Se olvidó Sakurai", "No querían", "El motor no lo permitía", 4);
         nuevaPregunta(p22);
-        Pregunta p23 = new Pregunta("¿Quíen es el más rápido en el aire?","Texto","Experto","No","No","No","Wario","Jigglypuff","Yoshi","Kirby",3);
+        Pregunta p23 = new Pregunta("¿Quíen es el más rápido en el aire?", "Texto", "Experto", "No", "No", "No", "Wario", "Jigglypuff", "Yoshi", "Kirby", 3);
         nuevaPregunta(p23);
-        Pregunta p24 = new Pregunta("¿Quién de estos recibe daño con su Counter?","Texto","Experto","No","No","No","Incineroar","Marth","K K Rool"," Ike",1);
+        Pregunta p24 = new Pregunta("¿Quién de estos recibe daño con su Counter?", "Texto", "Experto", "No", "No", "No", "Incineroar", "Marth", "K K Rool", " Ike", 1);
         nuevaPregunta(p24);
 
 

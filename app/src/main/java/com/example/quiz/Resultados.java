@@ -16,11 +16,11 @@ public class Resultados extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resultados);
 
-        TextView results = (TextView) findViewById(R.id.results);
+        TextView results = findViewById(R.id.results);
 
         results.setText("Enhorabuena, " + Configuracion.nombreJug + " tu puntuación es:" + Preguntas.score + " y tiempo: " + Preguntas.tiempo+ " segundos");
 
-        Button inicio = (Button) findViewById(R.id.back);
+        Button inicio = findViewById(R.id.back);
         inicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

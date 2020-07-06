@@ -8,13 +8,10 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,7 +23,7 @@ public class Configuracion extends AppCompatActivity {
 
     static final int READ_BLOCK_SIZE = 100;
     public static int NPreg = 5;
-    public static boolean expertoCheck= false;
+    public static boolean expertoCheck = false;
     public static String nombreJug = "Anónimo";
     private TextView prueba;
     private CheckBox experto;
@@ -37,12 +34,12 @@ public class Configuracion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_configuracion);
-        preguntasR = (RadioGroup) findViewById(R.id.radioPreguntas);
+        preguntasR = findViewById(R.id.radioPreguntas);
         experto = findViewById(R.id.expert);
         nombre = findViewById(R.id.nombre);
         prueba = findViewById(R.id.prueba);
 
-        switch (NPreg){
+        switch (NPreg) {
             case 5:
                 preguntasR.check(R.id.preg5);
                 break;
@@ -54,12 +51,17 @@ public class Configuracion extends AppCompatActivity {
                 break;
         }
 
-        if(!fileExists(this, "Configuraciones.txt")) {
+        //Comprobamos si existe el fichero, sino, se crea
+
+        if (!fileExists(this, "Configuraciones.txt")) {
             WriteBtn();
         }
+
         ReadBtn();
+
         if (expertoCheck)
             experto.setChecked(true);
+
         actualizarText();
     }
 
@@ -69,62 +71,54 @@ public class Configuracion extends AppCompatActivity {
         return file != null && file.exists();
     }
 
+    //Lee el fichero
+
     public void ReadBtn() {
 
         try {
-            FileInputStream fileIn=openFileInput("Configuraciones.txt");
-            InputStreamReader InputRead= new InputStreamReader(fileIn);
+            FileInputStream fileIn = openFileInput("Configuraciones.txt");
+            InputStreamReader InputRead = new InputStreamReader(fileIn);
 
-            char[] inputBuffer= new char[READ_BLOCK_SIZE];
-            String s="";
+            char[] inputBuffer = new char[READ_BLOCK_SIZE];
+            String s = "";
             int charRead;
 
-            while ((charRead=InputRead.read(inputBuffer))>0) {
-                String readstring=String.copyValueOf(inputBuffer,0,charRead);
-                s +=readstring;
+            while ((charRead = InputRead.read(inputBuffer)) > 0) {
+                String readstring = String.copyValueOf(inputBuffer, 0, charRead);
+                s += readstring;
             }
             InputRead.close();
             String[] separador = s.split(",");
-            NPreg =  Integer.parseInt(separador[0]);
+            NPreg = Integer.parseInt(separador[0]);
             expertoCheck = Boolean.parseBoolean(separador[1]);
             nombreJug = separador[2];
-
 
 
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public void onExperto(View view) {
 
-        if (experto.isChecked()){
-            expertoCheck = true;
-        }else{
-            expertoCheck=false;
+    //Crea o modifica el fichero
+
+    public void WriteBtn() {
+        try {
+            FileOutputStream fileout = openFileOutput("Configuraciones.txt", MODE_PRIVATE);
+            String outputConf = NPreg + "," + expertoCheck + "," + nombreJug;
+            OutputStreamWriter outputWriter = new OutputStreamWriter(fileout);
+            outputWriter.write(outputConf);
+            outputWriter.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        actualizarText();
     }
 
-    public void onAceptar(View view) {
-        String temp = nombre.getText().toString();
-        if(temp.length() > 0){
-            nombreJug = temp;
-        }else{
-            nombreJug="Anónimo";
-        }
-        actualizarText();
-        closeKeyboard();
+    public void actualizarText() {
+        prueba.setText(Html.fromHtml("<b>Nombre del Jugador: </b>" + nombreJug + "<br><br>" + "<b>Modo Experto: </b>" + expertoCheck + "<br><br>" + "<b>Nº de Preguntas: </b>" + NPreg));
     }
 
-    public void actualizarText(){
-        prueba.setText(Html.fromHtml("<b>Nombre del Jugador: </b>" + nombreJug +"<br><br>" + "<b>Modo Experto: </b>" +  expertoCheck + "<br><br>"+ "<b>Nº de Preguntas: </b>" + NPreg));
-    }
+    //Cierra el teclado por defecto de Android
 
-    public void onConfirm(View view) {
-        WriteBtn();
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
-    }
     private void closeKeyboard() {
         View view = this.getCurrentFocus();
         if (view != null) {
@@ -132,6 +126,33 @@ public class Configuracion extends AppCompatActivity {
             inputMan.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
+
+    //Funciones al hacer click
+
+    public void onExperto(View view) {
+
+        expertoCheck = experto.isChecked();
+        actualizarText();
+    }
+
+    public void onAceptar(View view) {
+        String temp = nombre.getText().toString();
+        if (temp.length() > 0) {
+            nombreJug = temp;
+        } else {
+            nombreJug = "Anónimo";
+        }
+        actualizarText();
+        closeKeyboard();
+    }
+
+    public void onConfirm(View view) {
+        WriteBtn();
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+    }
+
     public void onRadioButtonClicked(View view) {
 
         int id = preguntasR.getCheckedRadioButtonId();
@@ -151,18 +172,5 @@ public class Configuracion extends AppCompatActivity {
                 break;
         }
         actualizarText();
-    }
-
-    public void WriteBtn(){
-        try {
-            FileOutputStream fileout = openFileOutput("Configuraciones.txt", MODE_PRIVATE);
-            String outputConf = NPreg+","+expertoCheck+","+nombreJug;
-            OutputStreamWriter outputWriter=new OutputStreamWriter(fileout);
-            outputWriter.write(outputConf);
-            outputWriter.close();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
