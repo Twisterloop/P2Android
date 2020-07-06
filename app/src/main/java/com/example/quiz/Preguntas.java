@@ -8,7 +8,6 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -18,6 +17,7 @@ import android.widget.Chronometer;
 import android.widget.VideoView;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class Preguntas extends AppCompatActivity {
@@ -56,6 +56,7 @@ public class Preguntas extends AppCompatActivity {
     private RadioButton rb2;
     private RadioButton rb3;
     private RadioButton rb4;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,28 +89,28 @@ public class Preguntas extends AppCompatActivity {
         PreguntaDbHelper dbHelper = new PreguntaDbHelper(this);
         listaPreguntas = dbHelper.getTodas();
 
-        empiezaNuevo();
+        if (!Configuracion.expertoCheck) {
+            for (Iterator<Pregunta> iterator = listaPreguntas.iterator(); iterator.hasNext(); ) {
+                Pregunta p = iterator.next();
+                if (p.getDificultad().equals("Experto")) {
+                    iterator.remove();
+                }
+            }
+        }
 
-
+        Collections.shuffle(listaPreguntas);
+        mostrarPregunta();
     }
 
     public void resultados() {
         Intent intent = new Intent(this, Resultados.class);
         startActivity(intent);
-        empiezaNuevo();
     }
 
     public void onRadioButtonClicked(View view) {
         if (!acabado)
-            acabado=true;
-            compruebaRes();
-    }
-
-    private void empiezaNuevo() {
-        contador = 0;
-        score=0;
-        Collections.shuffle(listaPreguntas);
-        mostrarPregunta();
+            acabado = true;
+        compruebaRes();
     }
 
     private void compruebaRes() {
@@ -123,17 +124,16 @@ public class Preguntas extends AppCompatActivity {
             AciertosView.setText(String.format(AciertosYFallos, aciertos, fallos));
             score = score + 3;
             Toast.makeText(this, "Correcto", Toast.LENGTH_SHORT).show();
-            if (contador + 1 < numpreguntas) {
-                mostrarPregunta();
-            } else {
-                resultados();
-            }
         } else {
             fallos++;
             AciertosView.setText(String.format(AciertosYFallos, aciertos, fallos));
-            if (score>0) score--;
+            if (score > 0) score--;
             Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
+        }
+        if (contador + 1 < numpreguntas) {
             mostrarPregunta();
+        } else {
+            resultados();
         }
         acabado = false;
     }

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import java.io.File;
@@ -87,7 +88,7 @@ public class Ranking extends AppCompatActivity {
     public void leeRanking(String r) {
         String[] separador = r.split(";");
         String temp = Configuracion.nombreJug + "," + Preguntas.score + "," + Preguntas.tiempo;
-        ;
+
         for (int i = 0; i < soluciones.length; i++) {
             String[] separador2 = separador[i].split(",");
             String[] separadorTemp = temp.split(",");
@@ -129,5 +130,9 @@ public class Ranking extends AppCompatActivity {
         }
         res += soluciones[soluciones.length - 1];
         return res;
+    }
+
+    public void volverMenu(View v){
+        finish();
     }
 }
