@@ -62,6 +62,8 @@ public class Preguntas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         acabado = false;
+        score = 0;
+        tiempo = 0;
         TimeView = findViewById(R.id.Timer);
         TimeView.setFormat("Tiempo: %s");
         TimeView.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
@@ -130,7 +132,7 @@ public class Preguntas extends AppCompatActivity {
             if (score > 0) score--;
             Toast.makeText(this, "Incorrecto", Toast.LENGTH_SHORT).show();
         }
-        if (contador + 1 < numpreguntas) {
+        if (contador < numpreguntas) {
             mostrarPregunta();
         } else {
             resultados();
@@ -208,13 +210,6 @@ public class Preguntas extends AppCompatActivity {
         Resources res = getResources();
         int audioId = res.getIdentifier(actual.getAudio(), "raw", getPackageName());
         player = MediaPlayer.create(this, audioId);
-        player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-            @Override
-            public void onCompletion(MediaPlayer mp) {
-                player.release();
-                player = null;
-            }
-        });
         player.start();
     }
 }

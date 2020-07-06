@@ -34,7 +34,6 @@ public class Ranking extends AppCompatActivity {
         if (!fileExists(this, "Ranking.txt")) WriteBtn();
 
         ReadBtn();
-        WriteBtn();
 
         pos1 = findViewById(R.id.rank1);
         pos2 = findViewById(R.id.rank2);
@@ -87,30 +86,9 @@ public class Ranking extends AppCompatActivity {
     //Interpreta el fichero
     public void leeRanking(String r) {
         String[] separador = r.split(";");
-        String temp = Configuracion.nombreJug + "," + Preguntas.score + "," + Preguntas.tiempo;
 
         for (int i = 0; i < soluciones.length; i++) {
-            String[] separador2 = separador[i].split(",");
-            String[] separadorTemp = temp.split(",");
-            int actualRank = Integer.parseInt(separador2[1]);
-            int tempRank = Integer.parseInt(separadorTemp[1]);
-            //Comparamos los score
-            if (actualRank < tempRank) {
-                soluciones[i] = temp;
-                temp = separador[i];
-            } else if (actualRank == tempRank) {
-                //Si los scores son iguales, se comparan tiempos
-                int actualTime = Integer.parseInt(separador2[2]);
-                int tempTime = Integer.parseInt(separadorTemp[2]);
-                if (actualTime > tempTime) {
-                    soluciones[i] = temp;
-                    temp = separador[i];
-                } else {
-                    soluciones[i] = separador[i];
-                }
-            } else {
-                soluciones[i] = separador[i];
-            }
+            soluciones[i] = separador[i];
         }
     }
 
@@ -132,7 +110,7 @@ public class Ranking extends AppCompatActivity {
         return res;
     }
 
-    public void volverMenu(View v){
+    public void volverMenu(View v) {
         finish();
     }
 }

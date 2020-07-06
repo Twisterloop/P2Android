@@ -43,7 +43,7 @@
         android:layout_marginEnd="134dp"
         android:background="@drawable/bgpurple"
         android:onClick="Ranking"
-        android:text="Sube tu resultado"
+        android:text="Rankings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/results" />
